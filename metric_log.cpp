@@ -96,22 +96,30 @@ bool MetricLog<T>::contains(const T& target) const
 
 int main()
 {
+    cout << boolalpha;        // Print bool values as true or false.
+
     MetricLog<int> waitlistCounts;
 
     waitlistCounts.add(6);
     waitlistCounts.add(11);
 
-    cout << "First waitlist count: "
-         << waitlistCounts.get(0) << endl;
-    cout << "Stored waitlist counts: "
-         << waitlistCounts.size() << endl;
+    cout << "First waitlist count: " << waitlistCounts.get(0) << endl;
+    cout << "Stored waitlist counts: " << waitlistCounts.size() << endl;
 
-    // ===== Do not resolve these TODOs yet (Part E) =====
+// ===== Do not resolve these TODOs yet (Part E) =====
 
     // TODO (Part E): Create a MetricLog<double> for session durations.
+    MetricLog<double> sessionDurations;
+
     // TODO (Part E): Add two dummy duration values to that log.
+    sessionDurations.add(42.5);
+    sessionDurations.add(55.0);
+
     // TODO (Part E): Use contains with one value that exists and one that does not exist.
     // TODO (Part E): Print descriptive English labels for all results.
+    cout << "First session duration: " << sessionDurations.get(0) << endl;
+    cout << "Duration exists (42.5): " << sessionDurations.contains(42.5) << endl;
+    cout << "Other duration exists (30.0): " << sessionDurations.contains(30.0) << endl;
 
     return 0;
 }
