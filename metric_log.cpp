@@ -46,13 +46,13 @@ public:
     // Return false when the log has no remaining capacity.
     bool add(const T& value)
     {
-        if (count < CAPACITY)
+        if (count == CAPACITY)
         {
-            values[count] = value;
-            count++;
-            return true;
+            return false;
         }
-        return false;
+        values[count] = value;
+        count++;
+        return true;
     }
 
     // TODO (Part C): Write get. It receives a valid index and returns its stored value.
@@ -81,6 +81,18 @@ public:
 // TODO (Part D): Define MetricLog<T>::contains outside the class.
 // It receives a generic target by const reference.
 // Return true when an equal stored value exists; otherwise return false.
+template <typename T>
+bool MetricLog<T>::contains(const T& target) const
+{
+    for (int i = 0; i < count; i++)
+    {
+        if (values[i] == target)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
 int main()
 {
