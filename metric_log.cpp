@@ -17,9 +17,13 @@ using namespace std;
  *
  * Operations:
  * [Complete in Part E: describe add(value).]
+ //adds a new metric value to the log if space is available; returns true on success, false if full.
  * [Complete in Part E: describe get(index) and its precondition.]
+ // Retrieves the metric value at the specified index. Precondition: 0 <= index < size().
  * [Complete in Part E: describe contains(target).]
+ // Searches for a target metric in the log; returns true if found, false otherwise.
  * [Complete in Part E: describe size() and isEmpty().]
+ //
  */
 
 template <typename T>
